@@ -14,12 +14,29 @@
 
 @implementation AppDelegate
 
+- (UIStatusBarStyle)preferredStatusBarStyle
 
+{
+    
+    return UIStatusBarStyleLightContent;
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setThme];
     return YES;
 }
-
+/**  设置状态栏和导航栏的统一样式 */
+- (void) setThme
+{
+    // 1.设置导航栏背景
+    UINavigationBar *bar = [UINavigationBar appearance];
+    [bar setBackgroundImage:[UIImage imageNamed:@"矩形.png"] forBarMetrics:UIBarMetricsDefault];
+    // 状态栏
+    bar.barStyle =  UIBarStyleBlack;
+    //
+    bar.tintColor = [UIColor whiteColor];
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
