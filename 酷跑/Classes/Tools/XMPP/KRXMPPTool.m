@@ -22,6 +22,18 @@ singleton_implementation(KRXMPPTool)
     self.xmppStream= [[XMPPStream alloc]init];
     /* 设置代理 */
     [self.xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
+    // 初始化电子名片模块 和 头像模块
+    self.xmppvCardStore = [XMPPvCardCoreDataStorage sharedInstance];
+    self.xmppvCard = [[XMPPvCardTempModule alloc]initWithvCardStorage:self.xmppvCardStore];
+    self.xmppvCardAvtar = [[XMPPvCardAvatarModule alloc]initWithvCardTempModule:self.xmppvCard];
+    // 初始化花名册模块
+    _xmppRoserStore = [XMPPRosterCoreDataStorage sharedInstance];
+    _xmppRoser = [[XMPPRoster alloc] initWithRosterStorage:self.xmppRoserStore];
+    // 激活花名册模块
+    [self.xmppRoser activate:self.xmppStream];
+    // 激活电子名片模块和头像模块
+    [self.xmppvCard activate:self.xmppStream];
+    [self.xmppvCardAvtar activate:self.xmppStream];
 }
 /** 连接服务器 */
 - (void) connectHost

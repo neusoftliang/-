@@ -21,4 +21,8 @@ singleton_implementation(KRUserInfo)
     self.userName = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
     self.userPwd = [[NSUserDefaults standardUserDefaults] objectForKey:@"userPwd"];
 }
+- (NSString *)jid
+{
+    return [NSString stringWithFormat:@"%@@%@",self.userName,KRXMPPDOMAIN];
+}
 @end

@@ -292,12 +292,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2PC-OH-Ojh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="708"/>
+            <point key="canvasLocation" x="-107" y="708"/>
         </scene>
-        <!--View Controller-->
+        <!--SinaO Auth Controller-->
         <scene sceneID="RNW-g7-0RX">
             <objects>
-                <viewController id="NGN-xo-exy" sceneMemberID="viewController">
+                <viewController id="NGN-xo-exy" customClass="KRSinaOAuthController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d54-6e-EZt"/>
                         <viewControllerLayoutGuide type="bottom" id="V0Z-Mq-EIS"/>
@@ -320,10 +320,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8Os-Y2-nKK"/>
+                    <connections>
+                        <outlet property="webView" destination="UPq-oD-ROY" id="IuG-hD-t3h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1u-SH-4BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="359" y="708"/>
+            <point key="canvasLocation" x="811" y="615"/>
         </scene>
     </scenes>
     <resources>

@@ -8,11 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "XMPPFramework.h"
+#import "XMPPvCardTempModule.h"
+#import "XMPPvCardCoreDataStorage.h"
+#import "XMPPvCardAvatarModule.h"
 #import "Singleton.h"
-/* 定义XMPP 连接相关的宏 */
-#define  KRXMPPDOMAIN  @"tedu.cn"
-#define  KRXMPPHOSTNAME    @"127.0.0.1"
-#define  KRXMPPPORT    5222
+
 typedef enum {
     KRXMPPResultTypeLoginSuccess,
     KRXMPPResultTypeLoginFailed,
@@ -25,6 +25,13 @@ typedef  void (^KRXMPPResultBlock)(KRXMPPResultType type);
 @interface KRXMPPTool : NSObject
 singleton_interface(KRXMPPTool)
 @property (nonatomic,strong) XMPPStream *xmppStream;
+/* 增加个人电子名片模块 和 头像模块 */
+@property (nonatomic,strong) XMPPvCardTempModule *xmppvCard;
+@property (nonatomic,strong) XMPPvCardAvatarModule *xmppvCardAvtar;
+@property (nonatomic,strong) XMPPvCardCoreDataStorage *xmppvCardStore;
+/* 增加花名册模块 */
+@property (nonatomic,strong,readonly) XMPPRoster *xmppRoser;
+@property (nonatomic,strong,readonly) XMPPRosterCoreDataStorage *xmppRoserStore;
 /** 初始化XMPP流 */
 - (void) setXmpp;
 /** 连接服务器 */

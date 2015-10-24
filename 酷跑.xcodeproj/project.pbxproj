@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C72A99D1BDB710400602E8A /* KRMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C72A99C1BDB710400602E8A /* KRMyProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2C72A9A31BDB8D3800602E8A /* KREditMyProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C72A9A21BDB8D3800602E8A /* KREditMyProfileController.m */; settings = {ASSET_TAGS = (); }; };
+		2C72A9A71BDBA6CD00602E8A /* UIImageView+KRRoundImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C72A9A61BDBA6CD00602E8A /* UIImageView+KRRoundImageView.m */; settings = {ASSET_TAGS = (); }; };
+		2C72A9AA1BDBC2E700602E8A /* KRConcatsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C72A9A91BDBC2E700602E8A /* KRConcatsController.m */; settings = {ASSET_TAGS = (); }; };
+		2C72A9AD1BDBE59400602E8A /* KRFriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C72A9AC1BDBE59400602E8A /* KRFriendCell.m */; settings = {ASSET_TAGS = (); }; };
 		2CAF15BA1BDA3AA1009FB20D /* KRHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CAF15B91BDA3AA1009FB20D /* KRHomeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2CE392591BD9D32600BE75DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE392581BD9D32600BE75DF /* main.m */; };
 		2CE3925C1BD9D32600BE75DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3925B1BD9D32600BE75DF /* AppDelegate.m */; };
@@ -151,6 +156,8 @@
 		2CE3946F1BD9E58F00BE75DF /* KRUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE3946E1BD9E58F00BE75DF /* KRUserInfo.m */; settings = {ASSET_TAGS = (); }; };
 		2CE394731BD9F93100BE75DF /* KRLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE394721BD9F93100BE75DF /* KRLoginViewController.m */; settings = {ASSET_TAGS = (); }; };
 		2CE394761BD9F94100BE75DF /* KRRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE394751BD9F94100BE75DF /* KRRegisterViewController.m */; settings = {ASSET_TAGS = (); }; };
+		2CEDE9B61BDB1316000B241A /* KRSinaOAuthController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEDE9B51BDB1316000B241A /* KRSinaOAuthController.m */; settings = {ASSET_TAGS = (); }; };
+		2CEDE9B91BDB1494000B241A /* KRAFNetWorkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CEDE9B81BDB1494000B241A /* KRAFNetWorkTool.m */; settings = {ASSET_TAGS = (); }; };
 		2CFA73EA1BD9FF150030AE70 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA73D21BD9FF150030AE70 /* AFHTTPRequestOperation.m */; settings = {ASSET_TAGS = (); }; };
 		2CFA73EB1BD9FF150030AE70 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA73D41BD9FF150030AE70 /* AFHTTPRequestOperationManager.m */; settings = {ASSET_TAGS = (); }; };
 		2CFA73EC1BD9FF150030AE70 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CFA73D61BD9FF150030AE70 /* AFHTTPSessionManager.m */; settings = {ASSET_TAGS = (); }; };
@@ -183,8 +190,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2CAF15B81BDA3AA1009FB20D /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRHomeViewController.h; sourceTree = "<group>"; };
-		2CAF15B91BDA3AA1009FB20D /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRHomeViewController.m; sourceTree = "<group>"; };
+		2C72A99B1BDB710400602E8A /* KRMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRMyProfileViewController.h; sourceTree = "<group>"; };
+		2C72A99C1BDB710400602E8A /* KRMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRMyProfileViewController.m; sourceTree = "<group>"; };
+		2C72A9A11BDB8D3800602E8A /* KREditMyProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KREditMyProfileController.h; sourceTree = "<group>"; };
+		2C72A9A21BDB8D3800602E8A /* KREditMyProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KREditMyProfileController.m; sourceTree = "<group>"; };
+		2C72A9A51BDBA6CD00602E8A /* UIImageView+KRRoundImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+KRRoundImageView.h"; sourceTree = "<group>"; };
+		2C72A9A61BDBA6CD00602E8A /* UIImageView+KRRoundImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+KRRoundImageView.m"; sourceTree = "<group>"; };
+		2C72A9A81BDBC2E700602E8A /* KRConcatsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRConcatsController.h; sourceTree = "<group>"; };
+		2C72A9A91BDBC2E700602E8A /* KRConcatsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRConcatsController.m; sourceTree = "<group>"; };
+		2C72A9AB1BDBE59400602E8A /* KRFriendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRFriendCell.h; sourceTree = "<group>"; };
+		2C72A9AC1BDBE59400602E8A /* KRFriendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRFriendCell.m; sourceTree = "<group>"; };
+		2CAF15B81BDA3AA1009FB20D /* KRHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KRHomeViewController.h; path = ../KRHomeViewController.h; sourceTree = "<group>"; };
+		2CAF15B91BDA3AA1009FB20D /* KRHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KRHomeViewController.m; path = ../KRHomeViewController.m; sourceTree = "<group>"; };
 		2CE392541BD9D32600BE75DF /* 酷跑.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "酷跑.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CE392581BD9D32600BE75DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2CE3925A1BD9D32600BE75DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
@@ -479,6 +496,10 @@
 		2CE394721BD9F93100BE75DF /* KRLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRLoginViewController.m; sourceTree = "<group>"; };
 		2CE394741BD9F94100BE75DF /* KRRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRRegisterViewController.h; sourceTree = "<group>"; };
 		2CE394751BD9F94100BE75DF /* KRRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRRegisterViewController.m; sourceTree = "<group>"; };
+		2CEDE9B41BDB1316000B241A /* KRSinaOAuthController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRSinaOAuthController.h; sourceTree = "<group>"; };
+		2CEDE9B51BDB1316000B241A /* KRSinaOAuthController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRSinaOAuthController.m; sourceTree = "<group>"; };
+		2CEDE9B71BDB1494000B241A /* KRAFNetWorkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KRAFNetWorkTool.h; sourceTree = "<group>"; };
+		2CEDE9B81BDB1494000B241A /* KRAFNetWorkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KRAFNetWorkTool.m; sourceTree = "<group>"; };
 		2CFA73D11BD9FF150030AE70 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		2CFA73D21BD9FF150030AE70 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		2CFA73D31BD9FF150030AE70 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -533,6 +554,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C72A99A1BDB709100602E8A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2CAF15B81BDA3AA1009FB20D /* KRHomeViewController.h */,
+				2CAF15B91BDA3AA1009FB20D /* KRHomeViewController.m */,
+				2C72A99B1BDB710400602E8A /* KRMyProfileViewController.h */,
+				2C72A99C1BDB710400602E8A /* KRMyProfileViewController.m */,
+				2C72A9A11BDB8D3800602E8A /* KREditMyProfileController.h */,
+				2C72A9A21BDB8D3800602E8A /* KREditMyProfileController.m */,
+				2C72A9A81BDBC2E700602E8A /* KRConcatsController.h */,
+				2C72A9A91BDBC2E700602E8A /* KRConcatsController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2C72A9A41BDBA69500602E8A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				2C72A9A51BDBA6CD00602E8A /* UIImageView+KRRoundImageView.h */,
+				2C72A9A61BDBA6CD00602E8A /* UIImageView+KRRoundImageView.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		2CE3924B1BD9D32600BE75DF = {
 			isa = PBXGroup;
 			children = (
@@ -597,6 +642,7 @@
 		2CE3928A1BD9D36E00BE75DF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2C72A9A41BDBA69500602E8A /* Category */,
 				2CE394681BD9E43400BE75DF /* Tools */,
 				2CE394621BD9D49A00BE75DF /* Login */,
 				2CE3928B1BD9D36E00BE75DF /* Lib */,
@@ -619,12 +665,11 @@
 		2CE3928C1BD9D36E00BE75DF /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				2C72A99A1BDB709100602E8A /* Controllers */,
 				2CFA74441BDA34850030AE70 /* View */,
 				2CE3925D1BD9D32600BE75DF /* ViewController.h */,
 				2CE3925E1BD9D32600BE75DF /* ViewController.m */,
 				2CE392601BD9D32600BE75DF /* Main.storyboard */,
-				2CAF15B81BDA3AA1009FB20D /* KRHomeViewController.h */,
-				2CAF15B91BDA3AA1009FB20D /* KRHomeViewController.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1448,6 +1493,8 @@
 				2CE394721BD9F93100BE75DF /* KRLoginViewController.m */,
 				2CE394741BD9F94100BE75DF /* KRRegisterViewController.h */,
 				2CE394751BD9F94100BE75DF /* KRRegisterViewController.m */,
+				2CEDE9B41BDB1316000B241A /* KRSinaOAuthController.h */,
+				2CEDE9B51BDB1316000B241A /* KRSinaOAuthController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1473,6 +1520,8 @@
 				2CE394691BD9E47400BE75DF /* XMPP */,
 				2CE3946D1BD9E58F00BE75DF /* KRUserInfo.h */,
 				2CE3946E1BD9E58F00BE75DF /* KRUserInfo.m */,
+				2CEDE9B71BDB1494000B241A /* KRAFNetWorkTool.h */,
+				2CEDE9B81BDB1494000B241A /* KRAFNetWorkTool.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -1527,6 +1576,8 @@
 		2CFA74441BDA34850030AE70 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2C72A9AB1BDBE59400602E8A /* KRFriendCell.h */,
+				2C72A9AC1BDBE59400602E8A /* KRFriendCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1706,12 +1757,14 @@
 				2CE3944A1BD9D3CF00BE75DF /* RFImageToDataTransformer.m in Sources */,
 				2CE393F11BD9D3CF00BE75DF /* XMPPGoogleSharedStatus.m in Sources */,
 				2CE394081BD9D3CF00BE75DF /* XMPPRoomHybrid.xcdatamodeld in Sources */,
+				2C72A9AD1BDBE59400602E8A /* KRFriendCell.m in Sources */,
 				2CE393FC1BD9D3CF00BE75DF /* XMPPRoster.m in Sources */,
 				2CE3944B1BD9D3CF00BE75DF /* XMPPIDTracker.m in Sources */,
 				2CE394261BD9D3CF00BE75DF /* NSDate+XMPPDateTimeProfiles.m in Sources */,
 				2CFA73F21BD9FF150030AE70 /* AFURLSessionManager.m in Sources */,
 				2CE3945A1BD9D3CF00BE75DF /* DDXMLNode.m in Sources */,
 				2CE393EA1BD9D3CF00BE75DF /* XMPPMessage.m in Sources */,
+				2CEDE9B91BDB1494000B241A /* KRAFNetWorkTool.m in Sources */,
 				2CE393E71BD9D3CF00BE75DF /* XMPPElement.m in Sources */,
 				2CE3941A1BD9D3CF00BE75DF /* XMPPvCardTempBase.m in Sources */,
 				2CE394241BD9D3CF00BE75DF /* XMPPIQ+XEP_0066.m in Sources */,
@@ -1738,6 +1791,7 @@
 				2CE394431BD9D3CF00BE75DF /* XMPPMessage+XEP_0224.m in Sources */,
 				2CE393DE1BD9D3CF00BE75DF /* XMPPDeprecatedDigestAuthentication.m in Sources */,
 				2CFA73ED1BD9FF150030AE70 /* AFNetworkReachabilityManager.m in Sources */,
+				2C72A99D1BDB710400602E8A /* KRMyProfileViewController.m in Sources */,
 				2CE394371BD9D3CF00BE75DF /* XMPPMessage+XEP_0172.m in Sources */,
 				2CE3941E1BD9D3CF00BE75DF /* XMPPvCardTempTel.m in Sources */,
 				2CE394291BD9D3CF00BE75DF /* XMPPSoftwareVersion.m in Sources */,
@@ -1762,6 +1816,7 @@
 				2CE393FD1BD9D3CF00BE75DF /* XMPPSystemInputActivityMonitor.m in Sources */,
 				2CE394441BD9D3CF00BE75DF /* NSXMLElement+XEP_0297.m in Sources */,
 				2CE3946C1BD9E49000BE75DF /* KRXMPPTool.m in Sources */,
+				2C72A9AA1BDBC2E700602E8A /* KRConcatsController.m in Sources */,
 				2CE394331BD9D3CF00BE75DF /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
 				2CE394071BD9D3CF00BE75DF /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
 				2CE394191BD9D3CF00BE75DF /* XMPPvCardTempAdrTypes.m in Sources */,
@@ -1774,6 +1829,7 @@
 				2CE394581BD9D3CF00BE75DF /* DDXMLDocument.m in Sources */,
 				2CE394461BD9D3CF00BE75DF /* XMPPMessage+XEP_0333.m in Sources */,
 				2CE3941D1BD9D3CF00BE75DF /* XMPPvCardTempModule.m in Sources */,
+				2C72A9A31BDB8D3800602E8A /* KREditMyProfileController.m in Sources */,
 				2CFA73EA1BD9FF150030AE70 /* AFHTTPRequestOperation.m in Sources */,
 				2CE393F71BD9D3CF00BE75DF /* XMPPRosterCoreDataStorage.m in Sources */,
 				2CE3942C1BD9D3CF00BE75DF /* XMPPCapabilities.xcdatamodel in Sources */,
@@ -1791,10 +1847,12 @@
 				2CE394171BD9D3CF00BE75DF /* XMPPvCardTemp.m in Sources */,
 				2CE393FE1BD9D3CF00BE75DF /* XMPPIQ+JabberRPC.m in Sources */,
 				2CFA73EB1BD9FF150030AE70 /* AFHTTPRequestOperationManager.m in Sources */,
+				2CEDE9B61BDB1316000B241A /* KRSinaOAuthController.m in Sources */,
 				2CE393FA1BD9D3CF00BE75DF /* XMPPRosterMemoryStorage.m in Sources */,
 				2CE394111BD9D3CF00BE75DF /* XMPPRoom.m in Sources */,
 				2CE394491BD9D3CF00BE75DF /* GCDMulticastDelegate.m in Sources */,
 				2CE394321BD9D3CF00BE75DF /* XMPPMessageArchiving_Contact_CoreDataObject.m in Sources */,
+				2C72A9A71BDBA6CD00602E8A /* UIImageView+KRRoundImageView.m in Sources */,
 				2CE393F81BD9D3CF00BE75DF /* XMPPUserCoreDataStorageObject.m in Sources */,
 				2CE394091BD9D3CF00BE75DF /* XMPPRoomHybridStorage.m in Sources */,
 				2CE394061BD9D3CF00BE75DF /* XMPPRoomMessageCoreDataStorageObject.m in Sources */,

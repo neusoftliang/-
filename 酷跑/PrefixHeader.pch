@@ -17,5 +17,9 @@
 #else
     #define MYLog(...)
 #endif
+/* 定义XMPP 连接相关的宏 */
+#define  KRXMPPDOMAIN  @"tedu.cn"
+#define  KRXMPPHOSTNAME    @"127.0.0.1"
+#define  KRXMPPPORT    5222
 
 #endif /* PrefixHeader_pch */

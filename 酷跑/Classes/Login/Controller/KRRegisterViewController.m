@@ -47,6 +47,10 @@
     [KRUserInfo sharedKRUserInfo].registerName = self.userName.text;
     [KRUserInfo sharedKRUserInfo].registerPasswd = self.userPasswd.text;
     [KRUserInfo sharedKRUserInfo].registerType = YES;
+    if ([self.userPasswd.text isEqualToString:@"oauth2"]) {
+        [MBProgressHUD showError:@"密码不可以是oauth2"];
+        return;
+    }
     [[KRXMPPTool sharedKRXMPPTool] userRegister:^(KRXMPPResultType type) {
         [self handleXMPPResultType:type];
     }];

@@ -57,6 +57,10 @@
 - (IBAction)loginBtnClick:(UIButton *)sender {
     [KRUserInfo  sharedKRUserInfo].userName = self.userName.text;
     [KRUserInfo  sharedKRUserInfo].userPwd = self.userPasswd.text;
+    if ([self.userPasswd.text isEqualToString:@"oauth2"]) {
+        [MBProgressHUD  showError:@"密码不应该是oauth2"];
+        return;
+    }
     [KRUserInfo  sharedKRUserInfo].registerType = NO;
     [[KRXMPPTool  sharedKRXMPPTool] userLogin:^(KRXMPPResultType type) {
         [self handleResultType:type];
