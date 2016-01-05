@@ -20,9 +20,11 @@
 {
     if (self.vCardTemp.photo) {
         self.headImage.image = [UIImage imageWithData:self.vCardTemp.photo];
+    }else{
+        self.headImage.image = [UIImage imageNamed:@"微信"];
     }
     self.nikeName.text = self.vCardTemp.nickname;
-    self.email.text = self.vCardTemp.emailAddresses[0];
+    self.email.text = self.vCardTemp.mailer;
     self.headImage.userInteractionEnabled = YES;
     [self.headImage addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headImageTap)]];
     self.headImage.layer.masksToBounds = YES;
@@ -72,6 +74,7 @@
 - (IBAction)savevCardData:(id)sender {
     self.vCardTemp.photo = UIImagePNGRepresentation(self.headImage.image);
     self.vCardTemp.nickname = self.nikeName.text;
+    self.vCardTemp.mailer = self.email.text;
     [[KRXMPPTool sharedKRXMPPTool].xmppvCard  updateMyvCardTemp:self.vCardTemp];
     [self dismissViewControllerAnimated:YES completion:nil];
 }

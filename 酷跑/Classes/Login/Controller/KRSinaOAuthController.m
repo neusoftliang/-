@@ -11,30 +11,32 @@
 #import "KRUserInfo.h"
 #import "KRXMPPTool.h"
 #import "MBProgressHUD+KR.h"
-#define  APPKEY       @"3893301452"
+#define  APPKEY       @"2075708624"
 #define  REDIRECT_URI @"http://www.tedu.cn"
-#define  APPSECRET    @"c5d9ce0901e2bcffefd10f1c0c8cd513"
+#define  APPSECRET    @"36a3d3dec55af644cd94a316fdd8bfd8"
 
 @interface  KRSinaOAuthController() <UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+- (IBAction)backClick:(id)sender;
 
 @end
 @implementation KRSinaOAuthController
 - (void) viewDidLoad
 {
-     NSString  *urlStr = [NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@"
-         ,APPKEY,REDIRECT_URI];
-     NSURL  *url = [NSURL URLWithString:urlStr];
+    
     self.webView.delegate = self;
+    NSString  *urlStr = [NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=%@&redirect_uri=%@"
+                         ,APPKEY,REDIRECT_URI];
+    NSURL  *url = [NSURL URLWithString:urlStr];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
     
 }
-
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString  *urlPath =request.URL.absoluteString;
-   
-    NSRange range = [urlPath rangeOfString:[NSString stringWithFormat:@"%@%@",REDIRECT_URI,@"/?code="]];
+    MYLog(@"urlPath=%@",urlPath);
+    NSRange range = [urlPath rangeOfString:
+            [NSString stringWithFormat:@"%@%@",REDIRECT_URI,@"/?code="]];
     NSString *code = nil;
     if (range.length > 0) {
         code = [urlPath substringFromIndex:range.length];
@@ -71,13 +73,17 @@
         MYLog(@"%@",responseObject);
         NSString *innerName = [NSString stringWithFormat:@"sina%@",responseObject[@"uid"]];
         [KRUserInfo sharedKRUserInfo].registerName = innerName;
-        [KRUserInfo sharedKRUserInfo].registerPasswd = @"oauth2";
+        [KRUserInfo sharedKRUserInfo].registerPasswd = responseObject[@"access_token"];
         [KRUserInfo sharedKRUserInfo].userName = innerName;
-        [KRUserInfo sharedKRUserInfo].userPwd = @"oauth2";
+        [KRUserInfo sharedKRUserInfo].userPwd = responseObject[@"access_token"];
         [KRUserInfo sharedKRUserInfo].registerType = YES;
+        [KRUserInfo sharedKRUserInfo].sinaLogin = YES;
+        /* 成功之后赋值 token */
+        [KRUserInfo sharedKRUserInfo].sinaToken = responseObject[@"access_token"];
         // [];
+        __weak typeof(self) sinaVc = self;
         [[KRXMPPTool sharedKRXMPPTool] userRegister:^(KRXMPPResultType type) {
-            [self handleRegisterResult:type];
+            [sinaVc handleRegisterResult:type];
         }];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         MYLog(@"获取token失败");
@@ -89,14 +95,15 @@
 {
      /* 无论内部注册成功还是失败 都直接登录 */
      [KRUserInfo sharedKRUserInfo].registerType = NO;
+    __weak typeof(self) selfVC = self;
      [[KRXMPPTool  sharedKRXMPPTool] userLogin:^(KRXMPPResultType type) {
-        [self handleLoginResult:type];
+        [selfVC handleLoginResult:type];
      }];
 }
 - (void)  handleLoginResult:(KRXMPPResultType) type
 {
     switch (type) {
-        case KRXMPPResultTypeLoginNetError:
+        case KRXMPPResultTypeNetError:
             [MBProgressHUD   showError:@"网路错误"];
             break;
         case KRXMPPResultTypeLoginFailed:
@@ -105,6 +112,8 @@
         case KRXMPPResultTypeLoginSuccess:
         {
             // [MBProgressHUD showError:@"登录成功"];
+            [KRUserInfo sharedKRUserInfo].sinaLogin = YES;
+            [self dismissViewControllerAnimated:YES completion:nil];
             // 切换到主界面
             UIStoryboard *stroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             [UIApplication sharedApplication].keyWindow.rootViewController = stroyboard.instantiateInitialViewController;
@@ -114,5 +123,12 @@
             break;
     }
 
+}
+- (IBAction)backClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void) dealloc
+{
+    NSLog(@"%@",self);
 }
 @end

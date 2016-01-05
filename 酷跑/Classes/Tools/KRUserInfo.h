@@ -18,6 +18,9 @@ singleton_interface(KRUserInfo)
 @property (nonatomic,copy) NSString *registerName;
 @property (nonatomic,copy) NSString *registerPasswd;
 @property (nonatomic,copy) NSString *jid;
+/* 是否是新浪登录  */
+@property (nonatomic,assign) BOOL sinaLogin;
+@property (nonatomic,copy)  NSString *sinaToken;
 /* 用户数据的沙盒读写 */
 - (void) saveKRUserInfoToSandBox;
 - (void) loadKRUserInfoFromSandBox;

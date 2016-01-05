@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@protocol  KRRegisterViewControllerDelegate<NSObject>
-- (void) forUserLogin;
-@end
+
 @interface KRRegisterViewController : UIViewController
-@property (weak, nonatomic)  id<KRRegisterViewControllerDelegate> delegate;
+
 @end
+

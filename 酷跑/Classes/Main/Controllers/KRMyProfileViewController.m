@@ -17,11 +17,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *nikeName;
 
 @property (strong,nonatomic) XMPPvCardTemp *vCardTemp;
+- (IBAction)hideProfileBtnClick:(id)sender;
 
 @end
 @implementation KRMyProfileViewController
 - (void)viewDidLoad
 {
+    
+}
+- (void) viewWillAppear:(BOOL)animated{
     XMPPvCardTemp *vCardTemp = [KRXMPPTool sharedKRXMPPTool].xmppvCard.myvCardTemp;
     self.nikeName.text = [KRUserInfo sharedKRUserInfo].userName;
     if (vCardTemp.photo) {
@@ -32,7 +36,7 @@
     }
     [self.headImage setRoundLayer];
     self.vCardTemp = vCardTemp;
-    
+
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -43,8 +47,24 @@
         editProfileVc.vCardTemp = self.vCardTemp;
     }
 }
-
-
+/** 退出登录 */
+- (IBAction)logout:(UIButton *)sender {
+    [[KRUserInfo sharedKRUserInfo] saveKRUserInfoToSandBox];
+    [[KRXMPPTool sharedKRXMPPTool] sendOffLine];
+    [KRUserInfo sharedKRUserInfo].jid = nil;
+    if ([KRUserInfo sharedKRUserInfo].sinaLogin) {
+        [KRUserInfo sharedKRUserInfo].sinaLogin = NO;
+        [KRUserInfo sharedKRUserInfo].userName = nil;
+    }
+   
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    UIViewController *vc = storyboard.instantiateInitialViewController;
+    [UIApplication sharedApplication].keyWindow.rootViewController = vc;
+}
+/* 隐藏当前控制器 */
+- (IBAction)hideProfileBtnClick:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end
 
 

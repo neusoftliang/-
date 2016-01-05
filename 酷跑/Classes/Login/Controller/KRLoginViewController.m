@@ -11,7 +11,7 @@
 #import "KRXMPPTool.h"
 #import "MBProgressHUD+KR.h"
 #import "KRRegisterViewController.h"
-@interface KRLoginViewController ()<KRRegisterViewControllerDelegate>
+@interface KRLoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswd;
 - (IBAction)loginBtnClick:(UIButton *)sender;
@@ -19,12 +19,14 @@
 @end
 
 @implementation KRLoginViewController
--  (void)forUserLogin
-{
-    self.userName.text = [KRUserInfo sharedKRUserInfo].registerName;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+}
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     UIImage *imageN = [UIImage imageNamed:@"icon"];
     UIImageView *leftVN = [[UIImageView alloc]initWithImage:imageN];
     leftVN.contentMode = UIViewContentModeCenter;
@@ -37,39 +39,29 @@
     leftVP.frame = CGRectMake(0, 0, 55, 20);
     self.userPasswd.leftViewMode = UITextFieldViewModeAlways;
     self.userPasswd.leftView = leftVP;
+    if ([KRUserInfo sharedKRUserInfo].userName) {
+        self.userName.text = [KRUserInfo sharedKRUserInfo].userName;
+    }
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 - (IBAction)loginBtnClick:(UIButton *)sender {
     [KRUserInfo  sharedKRUserInfo].userName = self.userName.text;
     [KRUserInfo  sharedKRUserInfo].userPwd = self.userPasswd.text;
-    if ([self.userPasswd.text isEqualToString:@"oauth2"]) {
-        [MBProgressHUD  showError:@"密码不应该是oauth2"];
-        return;
-    }
     [KRUserInfo  sharedKRUserInfo].registerType = NO;
+     __weak typeof(self) vc = self;
     [[KRXMPPTool  sharedKRXMPPTool] userLogin:^(KRXMPPResultType type) {
-        [self handleResultType:type];
+        [vc handleResultType:type];
     }];
 }
 - (void) handleResultType:(KRXMPPResultType) type
 {
     switch (type) {
-        case KRXMPPResultTypeLoginNetError:
+        case KRXMPPResultTypeNetError:
             [MBProgressHUD   showError:@"网路错误"];
             break;
         case KRXMPPResultTypeLoginFailed:
@@ -77,7 +69,7 @@
             break;
         case KRXMPPResultTypeLoginSuccess:
         {
-            [MBProgressHUD showError:@"登录成功"];
+            [MBProgressHUD showSuccess:@"登录成功"];
             // 切换到主界面
             UIStoryboard *stroyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             [UIApplication sharedApplication].keyWindow.rootViewController = stroyboard.instantiateInitialViewController;
@@ -87,15 +79,11 @@
             break;
     }
 }
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    UINavigationController *vc = segue.destinationViewController;
-    if ([[vc.childViewControllers lastObject] isKindOfClass:[KRRegisterViewController class]]) {
-        KRRegisterViewController * desVc = (KRRegisterViewController*)vc.childViewControllers.lastObject;
-        desVc.delegate = self;
-    }
-}
 
+- (void)dealloc
+{
+    MYLog(@"%@",self);
+}
 @end
 
 

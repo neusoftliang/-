@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景" translatesAutoresizingMaskIntoConstraints="NO" id="bE4-Ao-C1G">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="背景图" translatesAutoresizingMaskIntoConstraints="NO" id="bE4-Ao-C1G">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qXf-Yv-Iq2">
@@ -127,28 +127,38 @@
                                     <segue destination="zyg-s5-4GC" kind="show" id="uTe-aB-wEK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="第三方账号快速登录" translatesAutoresizingMaskIntoConstraints="NO" id="YL3-H5-76R">
+                                <rect key="frame" x="30" y="401" width="540" height="12"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="12" id="gXR-XF-kXa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="JoP-TH-khi" secondAttribute="bottom" constant="100" id="0Zu-E2-ec2"/>
+                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="bE4-Ao-C1G" secondAttribute="bottom" id="0tm-YX-WTJ"/>
                             <constraint firstItem="VSb-fW-6I6" firstAttribute="top" secondItem="qXf-Yv-Iq2" secondAttribute="bottom" constant="40" id="5qy-7R-Oit"/>
+                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="JoP-TH-khi" secondAttribute="bottom" constant="100" id="6AZ-ag-zWy"/>
                             <constraint firstItem="JoP-TH-khi" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" constant="60" id="8V5-km-vzI"/>
                             <constraint firstItem="VSb-fW-6I6" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" constant="20" id="9wF-jt-8u9"/>
                             <constraint firstAttribute="trailing" secondItem="qXf-Yv-Iq2" secondAttribute="trailing" constant="20" id="AVR-0t-zbg"/>
                             <constraint firstItem="61g-C1-gA7" firstAttribute="top" secondItem="VSb-fW-6I6" secondAttribute="bottom" constant="34" id="AlJ-ps-IFH"/>
-                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="kQJ-c2-1Q1" secondAttribute="bottom" constant="100" id="BRH-pa-xNJ"/>
+                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="zQh-3O-RU3" secondAttribute="bottom" constant="100" id="BLe-DT-6w2"/>
                             <constraint firstItem="qXf-Yv-Iq2" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" constant="20" id="CUh-Fz-qq6"/>
                             <constraint firstAttribute="trailing" secondItem="61g-C1-gA7" secondAttribute="trailing" constant="60" id="Fdy-Pg-Opc"/>
                             <constraint firstAttribute="trailing" secondItem="zQh-3O-RU3" secondAttribute="trailing" constant="60" id="HaA-zf-MfY"/>
-                            <constraint firstItem="bE4-Ao-C1G" firstAttribute="top" secondItem="3gE-Qg-5np" secondAttribute="top" id="Lki-3K-mRf"/>
-                            <constraint firstAttribute="trailing" secondItem="bE4-Ao-C1G" secondAttribute="trailing" id="N3g-f8-Ghi"/>
+                            <constraint firstItem="bE4-Ao-C1G" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" id="KfH-dA-VQ2"/>
+                            <constraint firstItem="qXf-Yv-Iq2" firstAttribute="top" secondItem="KE0-dz-ugv" secondAttribute="bottom" constant="115" id="McG-lL-Jbf"/>
+                            <constraint firstItem="YL3-H5-76R" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" constant="30" id="OHY-ak-DJu"/>
+                            <constraint firstAttribute="trailing" secondItem="YL3-H5-76R" secondAttribute="trailing" constant="30" id="OXw-8E-aZ6"/>
                             <constraint firstItem="qsk-u3-0KA" firstAttribute="top" secondItem="VSb-fW-6I6" secondAttribute="bottom" constant="34" id="PaC-OL-nAT"/>
-                            <constraint firstItem="qXf-Yv-Iq2" firstAttribute="top" secondItem="KE0-dz-ugv" secondAttribute="bottom" constant="115" id="Tfy-j2-Nwi"/>
                             <constraint firstItem="qsk-u3-0KA" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" constant="60" id="ZHT-Ng-qVO"/>
-                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="bE4-Ao-C1G" secondAttribute="bottom" id="bUc-iu-OnJ"/>
+                            <constraint firstItem="kQJ-c2-1Q1" firstAttribute="top" secondItem="YL3-H5-76R" secondAttribute="bottom" constant="34" id="aFM-3D-a0Q"/>
                             <constraint firstAttribute="trailing" secondItem="VSb-fW-6I6" secondAttribute="trailing" constant="20" id="giB-Bn-ceL"/>
-                            <constraint firstItem="bE4-Ao-C1G" firstAttribute="leading" secondItem="3gE-Qg-5np" secondAttribute="leading" id="tA6-vr-edz"/>
-                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="zQh-3O-RU3" secondAttribute="bottom" constant="100" id="uZk-iJ-x8Q"/>
+                            <constraint firstItem="YL3-H5-76R" firstAttribute="centerX" secondItem="3gE-Qg-5np" secondAttribute="centerX" id="n8w-do-oB4"/>
+                            <constraint firstItem="bE4-Ao-C1G" firstAttribute="top" secondItem="3gE-Qg-5np" secondAttribute="top" id="uor-mM-Aui"/>
+                            <constraint firstAttribute="trailing" secondItem="bE4-Ao-C1G" secondAttribute="trailing" id="vOG-mg-E9q"/>
+                            <constraint firstItem="7Xy-yc-wZz" firstAttribute="top" secondItem="kQJ-c2-1Q1" secondAttribute="bottom" constant="100" id="xM0-2f-JY0"/>
                             <constraint firstItem="kQJ-c2-1Q1" firstAttribute="centerX" secondItem="3gE-Qg-5np" secondAttribute="centerX" id="y6v-R9-JLL"/>
                         </constraints>
                     </view>
@@ -159,7 +169,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yT2-MG-xyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-299" y="-154"/>
+            <point key="canvasLocation" x="-249" y="-306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zcg-rm-Utf">
@@ -175,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K1g-PL-XCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="345" y="-179"/>
+            <point key="canvasLocation" x="487" y="-306"/>
         </scene>
         <!--注册-->
         <scene sceneID="g6r-jD-lmd">
@@ -276,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LOb-9h-eqV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="905" y="-126"/>
+            <point key="canvasLocation" x="1229" y="-306"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="urO-6p-W9q">
@@ -294,7 +304,7 @@
             </objects>
             <point key="canvasLocation" x="-107" y="708"/>
         </scene>
-        <!--SinaO Auth Controller-->
+        <!--新浪微博登陆-->
         <scene sceneID="RNW-g7-0RX">
             <objects>
                 <viewController id="NGN-xo-exy" customClass="KRSinaOAuthController" sceneMemberID="viewController">
@@ -319,22 +329,30 @@
                             <constraint firstItem="V0Z-Mq-EIS" firstAttribute="top" secondItem="UPq-oD-ROY" secondAttribute="bottom" id="bPW-i3-eeJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="8Os-Y2-nKK"/>
+                    <navigationItem key="navigationItem" title="新浪微博登陆" id="8Os-Y2-nKK">
+                        <barButtonItem key="leftBarButtonItem" title="返回" id="bvl-Wz-seZ">
+                            <connections>
+                                <action selector="backClick:" destination="NGN-xo-exy" id="iie-3G-bs6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="webView" destination="UPq-oD-ROY" id="IuG-hD-t3h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j1u-SH-4BF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="811" y="615"/>
+            <point key="canvasLocation" x="751" y="721"/>
         </scene>
     </scenes>
     <resources>
-        <image name="button" width="690" height="100"/>
+        <image name="button" width="345" height="50"/>
         <image name="人人" width="53" height="53"/>
         <image name="微信" width="53" height="53"/>
         <image name="微博" width="53" height="53"/>
+        <image name="第三方账号快速登录" width="166" height="7"/>
         <image name="背景" width="375" height="667"/>
+        <image name="背景图" width="375" height="667"/>
         <image name="背景框" width="345" height="100"/>
     </resources>
 </document>
